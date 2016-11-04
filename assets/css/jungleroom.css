@@ -1,0 +1,47 @@
+*{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+main{
+  height: calc(100vh - 15px);
+  /*background: linear-gradient(180deg, #4e95b9, #3d6a83);*/
+  border: 15px solid #FFF ;
+  background-color: #62b9db;
+
+}
+.overlay{
+  width: 100%;
+  height: 100%;
+  background-color: #62b9db;
+  background-blend-mode: multiply;
+}
+.logo{
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  z-index: 10;
+  max-width: 50px;
+}
+.logo img{
+  width: 100%;
+}
+.title{
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  z-index: 10;
+  font-family: 'Georgia', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 100;
+  color: #FFF;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: #FFF; background: #62b9db;
+}
+::selection {
+  color: #FFF; background: #62b9db;
+}
