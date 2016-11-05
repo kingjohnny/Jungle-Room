@@ -6,33 +6,34 @@
 }
 
 main{
-  height: calc(100vh - 15px);
+  height: 100%;
   /*background: linear-gradient(180deg, #4e95b9, #3d6a83);*/
-  border: 15px solid #FFF ;
   background-color: #62b9db;
 
 }
-.overlay{
+.border{
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 1000;
   width: 100%;
   height: 100%;
-  background-color: #62b9db;
-  background-blend-mode: multiply;
+  border: 15px solid #FFF ;
 }
 .logo{
-  position: absolute;
+  position: fixed;
   top: 3%;
   left: 3%;
-  z-index: 10;
+  z-index: 1005;
   max-width: 50px;
 }
 .logo img{
   width: 100%;
 }
 .title{
-  position: absolute;
+  position: fixed;
   top: 3%;
   right: 3%;
-  z-index: 10;
+  z-index: 1001;
   font-family: 'Georgia', sans-serif;
   font-size: 0.75rem;
   font-weight: 100;
@@ -44,4 +45,41 @@ main{
 }
 ::selection {
   color: #FFF; background: #62b9db;
+}
+
+/*BACKGROUND VIDEO JS*/
+main {
+  position: relative;
+}
+
+/* Video wrap */
+.bv-video-wrap {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.bv-video-wrap--ready {
+  display: block;
+}
+
+.bv-video-wrap::before {
+  /* Optional overlay */
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #62b9db;
+  mix-blend-mode: multiply;
+  z-index: 10;
+}
+
+/* Video object */
+.bv-video {
+  width: 100%;
+  height: 100%;
 }
