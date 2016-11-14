@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<!--[if lt IE 9]>         <html class="lt-ie9"> <![endif]-->
-<!--[if gte IE 9]><!--> <html lang="nl"><!--<![endif]-->
-
+<html lang="nl">
+<!--
+_________          _        _______  _        _______    _______  _______  _______  _______
+\__    _/|\     /|( (    /|(  ____ \( \      (  ____ \  (  ____ )(  ___  )(  ___  )(       )
+   )  (  | )   ( ||  \  ( || (    \/| (      | (    \/  | (    )|| (   ) || (   ) || () () |
+   |  |  | |   | ||   \ | || |      | |      | (__      | (____)|| |   | || |   | || || || |
+   |  |  | |   | || (\ \) || | ____ | |      |  __)     |     __)| |   | || |   | || |(_)| |
+   |  |  | |   | || | \   || | \_  )| |      | (        | (\ (   | |   | || |   | || |   | |
+|\_)  )  | (___) || )  \  || (___) || (____/\| (____/\  | ) \ \__| (___) || (___) || )   ( |
+(____/   (_______)|/    )_)(_______)(_______/(_______/  |/   \__/(_______)(_______)|/     \|
+Welcome to the Jungle -->
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0, shrink-to-fit=0">
 
-    <!-- search meta -->
     <title>Welcome to the Jungle!</title>
     <meta name="author" content="Think Tomorrow" />
     <link rel="shortcut icon" href="/assets/favicon.ico" />
@@ -21,17 +28,23 @@
   </header>
   <div class="border"></div>
   <div class="monkey">
-    <img src="assets/img/monkey.png">
+    <img src="assets/img/monkey.png" class="slideInUp">
   </div>
   <main class="main">
     <div class="title">
       <h1>Phase 1: Welcome to the jungle</h1>
     </div>
-    <video class="bv-video"></video>
-    <video class="bv-video-2"></video>
-    <video class="bv-video-3"></video>
+    <div class="bullets">
+      <a href="#jungle" class="active bullet-dash"><span></span></a>
+      <a href="#cleanuplevel3" class="bullet-dash"><span></span></a>
+      <a href="#paintthewall" class="bullet-dash"><span></span></a>
+    </div>
+    <video class="bv-video" id="jungle" muted></video>
+    <video class="bv-video-2" id="cleanuplevel3" muted></video>
+    <video class="bv-video-3" id="paintthewall" muted></video>
   </main>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="assets/js/backgroundVideo.js"></script>
   <script>
     // https://github.com/linnett/backgroundVideo
@@ -66,6 +79,22 @@
         vidParent.classList.add('bv-video-wrap--ready');
       }
     });
+
+
+$(function() {
+  $('a[href*="\\#"]:not([href="\\#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
   </script>
 </body>
 </html>
