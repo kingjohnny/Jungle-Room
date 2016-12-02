@@ -18,6 +18,15 @@ Welcome to the Jungle -->
     <title>Welcome to the Jungle!</title>
     <meta name="author" content="Think Tomorrow" />
     <link rel="shortcut icon" href="/assets/favicon.ico" />
+    
+    <!-- social meta -->
+    <meta property='og:title' content="Think Tomorrow verwelkomt je in de Jungle" />
+    <meta property='og:type' content='Campagne' />
+    <meta property='og:description' content="Welcome to the Jungle" />
+    <meta property='og:image' content='http://thinktomorrow.be/assets/img/share.png' />
+    <meta property='og:url' content='http://thinktomorrow.be' />
+    <meta property='og:site_name' content='Think Tomorrow' />
+
     <link rel="stylesheet" href="assets/css/normalize.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/jungleroom.css" type="text/css" />
 
@@ -27,21 +36,27 @@ Welcome to the Jungle -->
     <img src="assets/img/logo.svg" alt="tt">
   </header>
   <div class="border"></div>
-  <div class="monkey">
-    <img src="assets/img/monkey.png" class="slideInUp">
+  <div class="parrot">
+    <img src="assets/svg/parrot.svg" class="slideInRight">
   </div>
   <main class="main">
     <div class="title">
       <h1>Phase 1: Welcome to the jungle</h1>
     </div>
+
     <div class="bullets">
-      <a href="#jungle" class="active bullet-dash"><span></span></a>
-      <a href="#cleanuplevel3" class="bullet-dash"><span></span></a>
-      <a href="#paintthewall" class="bullet-dash"><span></span></a>
+      <a href="#thrashtheroom" class="active bullet-dash"><span></span></a>
+      <a href="#paintingonthewall" class="bullet-dash"><span></span></a>
+      <a href="#everybodyhitthefloor_ffw" class="bullet-dash"><span></span></a>
+      <a href="#thetableoftheknights" class="bullet-dash"><span></span></a>
+      <a href="#endsprint_ffw" class="bullet-dash"><span></span></a>
     </div>
-    <video class="bv-video" id="jungle" muted></video>
-    <video class="bv-video-2" id="cleanuplevel3" muted></video>
-    <video class="bv-video-3" id="paintthewall" muted></video>
+
+    <video class="bv-video" id="thrashtheroom" muted></video>
+    <video class="bv-video-2" id="paintingonthewall" muted></video>
+    <video class="bv-video-3" id="everybodyhitthefloor_ffw" muted></video>
+    <video class="bv-video-4" id="thetableoftheknights" muted></video>
+    <video class="bv-video-5" id="endsprint_ffw" muted></video>
   </main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -50,8 +65,7 @@ Welcome to the Jungle -->
     // https://github.com/linnett/backgroundVideo
     const backgroundVideo = new BackgroundVideo('.bv-video', {
       src: [
-        'assets/video/gopro-1.mp4',
-        'assets/video/gopro-1.webm'
+        'assets/video/thrashtheroom_ffw.mp4'
       ],
       onReady: function () {
         // Use onReady() to prevent flickers or force loading state
@@ -61,7 +75,7 @@ Welcome to the Jungle -->
     });
     const backgroundVideo2 = new BackgroundVideo('.bv-video-2', {
       src: [
-        'assets/video/gopro-2.mp4'
+        'assets/video/paintingonthewall_ffw.mp4'
       ],
       onReady: function () {
         // Use onReady() to prevent flickers or force loading state
@@ -71,7 +85,7 @@ Welcome to the Jungle -->
     });
     const backgroundVideo3 = new BackgroundVideo('.bv-video-3', {
       src: [
-        'assets/video/gopro-3.mp4'
+        'assets/video/everybodyhitthefloor_ffw.mp4'
       ],
       onReady: function () {
         // Use onReady() to prevent flickers or force loading state
@@ -79,22 +93,26 @@ Welcome to the Jungle -->
         vidParent.classList.add('bv-video-wrap--ready');
       }
     });
-
-
-$(function() {
-  $('a[href*="\\#"]:not([href="\\#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
+    const backgroundVideo4 = new BackgroundVideo('.bv-video-4', {
+      src: [
+        'assets/video/thetableoftheknights_ffw.mp4'
+      ],
+      onReady: function () {
+        // Use onReady() to prevent flickers or force loading state
+        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
+        vidParent.classList.add('bv-video-wrap--ready');
       }
-    }
-  });
-});
+    });
+    const backgroundVideo5 = new BackgroundVideo('.bv-video-5', {
+      src: [
+        'assets/video/endsprint_ffw.mp4'
+      ],
+      onReady: function () {
+        // Use onReady() to prevent flickers or force loading state
+        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
+        vidParent.classList.add('bv-video-wrap--ready');
+      }
+    });
   </script>
 </body>
 </html>

@@ -40,13 +40,12 @@ main{
   font-weight: 100;
   color: #FFF;
 }
-.monkey{
+.parrot{
   z-index: 1000;
   position: fixed;
-  bottom: -5px;
-  right: 3%;
+  bottom: 0;
+  right: 0;
   width: 200px;
-  animation-name: slideInUp;
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -63,7 +62,7 @@ main {
 .bullets{
   position: fixed;
   z-index: 1001;
-  width: auto;
+  width: 50%;
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
@@ -72,7 +71,7 @@ main {
   display: block;
   background-color: rgba(255, 255, 255, 0.5);
   height: 5px;
-  width: 150px;
+  width: calc(100% / 5 - 10px);
   float: left;
   margin: 5px;
 }
@@ -114,9 +113,9 @@ video{
 
 
 /* ANIMATIONS */
-.slideInUp {
-  -webkit-animation-name: slideInUp;
-  animation-name: slideInUp;
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -126,26 +125,28 @@ video{
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
   }
-  @-webkit-keyframes slideInUp {
-  0% {
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  visibility: visible;
+  @-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
   }
-  100% {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
   }
-  @keyframes slideInUp {
-  0% {
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  visibility: visible;
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
-  100% {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  }
-  }
-×
+}
