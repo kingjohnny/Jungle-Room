@@ -104,10 +104,19 @@ video{
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #62b9db;
+  background-color: #62b9db; /* blue */
   mix-blend-mode: multiply;
   z-index: 10;
 }
+.bv-video-5-wrap-0::before,
+.bv-video-2-wrap-0::before{
+  background-color: #4ec285; /* green */
+}
+.bv-video-6-wrap-0::before,
+.bv-video-3-wrap-0::before{
+  background-color: #ffb33a; /*  orange */
+}
+
 
 /* Video object */
 
