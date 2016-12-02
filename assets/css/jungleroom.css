@@ -117,6 +117,36 @@ video{
   background-color: #ffb33a; /*  orange */
 }
 
+.bv-video-wrap-0::after,
+.bv-video-2-wrap-0::after,
+.bv-video-3-wrap-0::after,
+.bv-video-4-wrap-0::after,
+.bv-video-5-wrap-0::after{
+  display: block;
+  position: fixed;
+  right: 3%;  top: 5%;
+  font-family: 'Georgia', sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #FFF;
+  z-index: 1001;
+}
+.bv-video-wrap-0::after{
+  content: 'Thrash the room';
+}
+.bv-video-2-wrap-0::after{
+  content: 'Paint:the wall';
+}
+.bv-video-3-wrap-0::after{
+content: 'Everybody hit the floor';
+}
+.bv-video-4-wrap-0::after{
+content: 'The knights table';
+}
+.bv-video-5-wrap-0::after{
+content: 'Finishing touches';
+}
+
 
 /* Video object */
 
