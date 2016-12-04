@@ -24,8 +24,9 @@ $bullets.on('click',function(){
 function goToVideo(id)
 {
     var video = document.getElementById(id),
+        container = $(video).parent()[0],
         index = 0,
-        videoHeight = parseInt(video.style.height);
+        containerHeight = parseInt(container.style.height); // We want to scroll to the container not the video for proper positioning
 
     // Locale the position index of our target video
     for(var i = 0; i < videos.length;i++)
@@ -37,7 +38,7 @@ function goToVideo(id)
         }
     }
 
-    $(window).scrollTo(videoHeight * index,500);
+    $(window).scrollTo(containerHeight * index,500);
 }
 
 /* ------------------------------------------------------------------*
