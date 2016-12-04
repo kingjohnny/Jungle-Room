@@ -1,3 +1,6 @@
+/* ------------------------------------------------------------------*
+ * NAVIGATION
+ * ------------------------------------------------------------------*/
 var videos = document.getElementsByTagName('video'),
     bullets = document.getElementsByClassName('bullet-dash'),
     $bullets = $(bullets);
@@ -37,54 +40,31 @@ function goToVideo(id)
     $(window).scrollTo(videoHeight * index,500);
 }
 
-// https://github.com/linnett/backgroundVideo
-const backgroundVideo = new BackgroundVideo('.bv-video', {
-    src: [
-        'assets/video/thrashtheroom_ffw.mp4'
-    ],
-    onReady: function () {
-        // Use onReady() to prevent flickers or force loading state
-        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
-        vidParent.classList.add('bv-video-wrap--ready');
-    }
-});
-const backgroundVideo2 = new BackgroundVideo('.bv-video-2', {
-    src: [
-        'assets/video/paintingonthewall_ffw.mp4'
-    ],
-    onReady: function () {
-        // Use onReady() to prevent flickers or force loading state
-        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
-        vidParent.classList.add('bv-video-wrap--ready');
-    }
-});
-const backgroundVideo3 = new BackgroundVideo('.bv-video-3', {
-    src: [
-        'assets/video/everybodyhitthefloor_ffw.mp4'
-    ],
-    onReady: function () {
-        // Use onReady() to prevent flickers or force loading state
-        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
-        vidParent.classList.add('bv-video-wrap--ready');
-    }
-});
-const backgroundVideo4 = new BackgroundVideo('.bv-video-4', {
-    src: [
-        'assets/video/thetableoftheknights_ffw.mp4'
-    ],
-    onReady: function () {
-        // Use onReady() to prevent flickers or force loading state
-        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
-        vidParent.classList.add('bv-video-wrap--ready');
-    }
-});
-const backgroundVideo5 = new BackgroundVideo('.bv-video-5', {
-    src: [
-        'assets/video/endsprint_ffw.mp4'
-    ],
-    onReady: function () {
-        // Use onReady() to prevent flickers or force loading state
-        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
-        vidParent.classList.add('bv-video-wrap--ready');
-    }
-});
+/* ------------------------------------------------------------------*
+ * BACKGROUND VIDEO
+ * @source https://github.com/linnett/backgroundVideo
+ * ------------------------------------------------------------------*/
+
+// Load all video elements via the backgroundVideo object
+for(var i=0; i < videos.length;i++)
+{
+    var source = videos[i].getAttribute('data-src'),
+        comment = videos[i].getAttribute('data-comment')
+        className = (i === 0) ? '.bv-video' : '.bv-video-'+(i+1); // index '1' is skipped in classname: .bv-video, .bv-video-2, .bv-video-3,...
+
+    new BackgroundVideo(className, {
+        src: [source],
+        comment: comment,
+        onReady: function () {
+
+            // Use onReady() to prevent flickers or force loading state
+            const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
+            vidParent.classList.add('bv-video-wrap--ready');
+
+            if(this.comment)
+            {
+                $(vidParent).append('<div class="bv-video-comment">'+this.comment+'</div>');
+            }
+        }
+    });
+}
