@@ -1,0 +1,20 @@
+/* IPHONE 5 */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+  .bv-video-wrap::after,
+  .border,
+  .bullets a:hover::after,
+  .parrot{
+    display: none!important;
+  }
+
+  .bullets{
+    width: 80%!important;
+  }
+
+  .logo, .nav-trigger{
+    top: 15px!important;
+  }
+
+}

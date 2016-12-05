@@ -33,19 +33,17 @@ main{
 .border{
   position: fixed;
   top: 0; left: 0;
-  z-index: 1000;
+  z-index: 1002;
   width: 100%;
   height: 100%;
   border: 10px solid #FFF ;
 }
 .logo{
-  position: fixed;
-  top: 10px;
+  top: 30px;
   left: 3%;
   z-index: 1005;
-  max-width: 47px;
+  width: 47px;
 }
-.logo img,
 .title img{
   width: 100%;
 }
@@ -76,7 +74,7 @@ main{
 }
 .plant{
   position: absolute;
-  bottom: 0;
+  bottom: 0; right: 0;
   z-index: 0;
   -webkit-animation-delay: 3s;
   animation-delay: 3s;
@@ -114,7 +112,7 @@ main {
 .bullets .active{
   background-color: rgba(255, 255, 255, 1);
 }
-.bullets a:hover:after{
+.bullets a:hover::after{
 	padding: 5px 10px;
   font-size: 0.75rem;
 	background: #091d23;
@@ -139,6 +137,7 @@ video{
 
 .bv-video-wrap--ready {
   display: block;
+  position: relative;
 }
 
 .bv-video-wrap::before {
@@ -170,8 +169,9 @@ video{
 .bv-video-4-wrap-0::after,
 .bv-video-5-wrap-0::after,
 .bv-video-6-wrap-0::after{
+  content: '';
   display: block;
-  position: fixed;
+  position: fixed; /*GEEFT PROBLEMEN IN FIREFOX*/
   right: calc(3% + 50px);  top: 35px;
   font-family: 'Georgia', sans-serif;
   font-size: 1.5em;

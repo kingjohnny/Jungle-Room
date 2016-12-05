@@ -167,7 +167,7 @@
   height: 100%;
   width: 100%;
   padding: 80px 15%;
-  z-index: 3;
+  z-index: 1003;
   background-color: #091d23;
   overflow: auto;
   /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
@@ -264,7 +264,7 @@
 
 .overlay-nav {
   /* main rounded colored bg 1 */
-  z-index: 2;
+  z-index: 1002;
 }
 .overlay-nav span {
   background-color: #091d23;
@@ -272,7 +272,7 @@
 
 .overlay-content {
   /* main rounded colored bg 2 */
-  z-index: 4;
+  z-index: 1004;
 }
 .overlay-content span {
   background-color: #ffb441;
@@ -281,7 +281,7 @@
 .content {
   /* just some dummy content */
   margin: 0 auto;
-  z-index: 1;
+  z-index: 1001;
 }
 .content .intro {
   height: 200px;
