@@ -65,7 +65,21 @@ main{
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 200px;
+  width: 175px;
+}
+.bird{
+  position: relative;
+  z-index: 1;
+  top: -100px;
+  -webkit-animation-delay: 3.5s;
+  animation-delay: 3.5s;
+}
+.plant{
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -196,8 +210,6 @@ content: 'Party Animals';
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-delay: 5s;
-  animation-delay: 5s;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
   }
