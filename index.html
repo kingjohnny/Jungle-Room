@@ -27,12 +27,29 @@ Welcome to the Jungle -->
     <meta property='og:url' content='http://jungle.thinktomorrow.be' />
     <meta property='og:site_name' content='Think Tomorrow' />
 
+    <link rel="stylesheet" href="assets/css/preloading.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/normalize.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/jungleroom.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/menu.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Preloader -->
+    <script type="text/javascript">
+        //<![CDATA[
+            $(window).on('load', function() { // makes sure the whole site is loaded
+                $('#status').fadeOut(); // will first fade out the loading animation
+                $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+                $('body').delay(350).css({'overflow':'visible'});
+            })
+        //]]>
+    </script>
 
 </head>
 <body>
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+
   <header class="logo">
     <img src="assets/img/logo.svg" alt="tt">
   </header>
@@ -84,7 +101,6 @@ Welcome to the Jungle -->
     <video class="bv-video-6" data-src="assets/video/animals.mp4" id="animals" muted></video>
   </main>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="assets/js/vendor/scrollto.js"></script>
   <script src="assets/js/vendor/backgroundVideo.js"></script>
   <script src="assets/js/main.js"></script>
