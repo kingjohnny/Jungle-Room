@@ -36,7 +36,7 @@ main{
   z-index: 1000;
   width: 100%;
   height: 100%;
-  border: 15px solid #FFF ;
+  border: 10px solid #FFF ;
 }
 .logo{
   position: fixed;
@@ -90,7 +90,7 @@ main {
 .bullets a{
   display: block;
   background-color: rgba(255, 255, 255, 0.5);
-  height: 5px;
+  height: 10px;
   width: calc(100% / 6 - 10px);
   float: left;
   margin: 5px;
@@ -103,13 +103,13 @@ main {
 .bullets a:hover:after{
 	padding: 5px 10px;
   font-size: 0.75rem;
-	background: #000;
+	background: #091d23;
   color: #FFF;
 	content: attr(data-title);
 	position: absolute;
 	width: 100%;
   text-align: center;
-	top: -25px;
+	top: -22px;
 }
 video{
   -webkit-filter: grayscale(100%);
@@ -120,6 +120,7 @@ video{
   width: 100%;
   height: 100%;
   display: none;
+  border-bottom: 10px solid #FFF;
 }
 
 .bv-video-wrap--ready {
@@ -157,7 +158,7 @@ video{
 .bv-video-6-wrap-0::after{
   display: block;
   position: fixed;
-  right: 7%;  top: 35px;
+  right: calc(3% + 50px);  top: 35px;
   font-family: 'Georgia', sans-serif;
   font-size: 1.5em;
   font-weight: bold;
