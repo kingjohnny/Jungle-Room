@@ -61,76 +61,35 @@ Welcome to the Jungle -->
 
   <main class="main content ">
     <div class="bullets">
-      <a href="#thrashtheroom" class="active bullet-dash"><span></span></a>
+      <a href="#thrashtheroom" class="bullet-dash"><span></span></a>
       <a href="#paintingonthewall" class="bullet-dash"><span></span></a>
       <a href="#everybodyhitthefloor_ffw" class="bullet-dash"><span></span></a>
       <a href="#thetableoftheknights" class="bullet-dash"><span></span></a>
       <a href="#endsprint_ffw" class="bullet-dash"><span></span></a>
+      <a href="#animals" class="bullet-dash"><span></span></a>
     </div>
 
-    <video class="bv-video" id="thrashtheroom" muted></video>
-    <video class="bv-video-2" id="paintingonthewall" muted></video>
-    <video class="bv-video-3" id="everybodyhitthefloor_ffw" muted></video>
-    <video class="bv-video-4" id="thetableoftheknights" muted></video>
-    <video class="bv-video-5" id="endsprint_ffw" muted></video>
+    <video class="bv-video"
+           data-src="assets/video/thrashtheroom_ffw.mp4"
+           data-comment="Trash Porro ratione voluptates voluptatibus. Alias, aspernatur blanditiis error fugit laudantium molestias quia rerum sed suscipit voluptatem."
+           id="thrashtheroom" muted>
+    </video>
+    <video class="bv-video-2" data-src="assets/video/paintingonthewall_ffw.mp4" id="paintingonthewall" muted></video>
+    <video class="bv-video-3" data-src="assets/video/everybodyhitthefloor_ffw.mp4" id="everybodyhitthefloor_ffw" muted></video>
+    <video class="bv-video-4"
+           data-src="assets/video/thetableoftheknights_ffw.mp4"
+           data-comment="Knights Alias, aspernatur blanditiis error fugit laudantium molestias quia rerum sed suscipit voluptatem."
+           id="thetableoftheknights" muted>
+    </video>
+    <video class="bv-video-5" data-src="assets/video/endsprint_ffw.mp4" id="endsprint_ffw" muted></video>
+    <video class="bv-video-6" data-src="assets/video/animals.mp4" id="animals" muted></video>
   </main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="assets/js/backgroundVideo.js"></script>
+  <script src="assets/js/vendor/scrollto.js"></script>
+  <script src="assets/js/vendor/backgroundVideo.js"></script>
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/menu.js"></script>
   <script src="assets/js/velocity.min.js"></script>
-  <script>
-    // https://github.com/linnett/backgroundVideo
-    const backgroundVideo = new BackgroundVideo('.bv-video', {
-      src: [
-        'assets/video/thrashtheroom_ffw.mp4'
-      ],
-      onReady: function () {
-        // Use onReady() to prevent flickers or force loading state
-        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
-        vidParent.classList.add('bv-video-wrap--ready');
-      }
-    });
-    const backgroundVideo2 = new BackgroundVideo('.bv-video-2', {
-      src: [
-        'assets/video/paintingonthewall_ffw.mp4'
-      ],
-      onReady: function () {
-        // Use onReady() to prevent flickers or force loading state
-        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
-        vidParent.classList.add('bv-video-wrap--ready');
-      }
-    });
-    const backgroundVideo3 = new BackgroundVideo('.bv-video-3', {
-      src: [
-        'assets/video/everybodyhitthefloor_ffw.mp4'
-      ],
-      onReady: function () {
-        // Use onReady() to prevent flickers or force loading state
-        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
-        vidParent.classList.add('bv-video-wrap--ready');
-      }
-    });
-    const backgroundVideo4 = new BackgroundVideo('.bv-video-4', {
-      src: [
-        'assets/video/thetableoftheknights_ffw.mp4'
-      ],
-      onReady: function () {
-        // Use onReady() to prevent flickers or force loading state
-        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
-        vidParent.classList.add('bv-video-wrap--ready');
-      }
-    });
-    const backgroundVideo5 = new BackgroundVideo('.bv-video-5', {
-      src: [
-        'assets/video/endsprint_ffw.mp4'
-      ],
-      onReady: function () {
-        // Use onReady() to prevent flickers or force loading state
-        const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
-        vidParent.classList.add('bv-video-wrap--ready');
-      }
-    });
-  </script>
 </body>
 </html>
