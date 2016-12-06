@@ -7,10 +7,10 @@
  * Copyright 2016 Sam Linnett <linnettsam@gmail.com>
  * @license http://www.opensource.org/licenses/mit-license.html MIT License
  */
-'use strict';
+//'use strict';
 
 (function(root, factory) {
-  const pluginName = 'BackgroundVideo';
+  var pluginName = 'BackgroundVideo';
 
   if (typeof define === 'function' && define.amd) {
     define([], factory(pluginName));
@@ -23,7 +23,7 @@
   /**
    * Default options
    */
-  const defaults = {
+  var defaults = {
     parallax: {
       effect: 1.5
     },
@@ -39,7 +39,7 @@
   /**
    * Some private helper function
    */
-  const addClass = function (el, className) {
+  var addClass = function (el, className) {
     if (el.classList) {
       el.classList.add(className);
     }
@@ -71,7 +71,7 @@
       // Detect 3d transforms
       this.options.has3d = this.detect3d();
       // Loop through each video and init
-      for(let i = 0; i < this.element.length; i++) {
+      for(var i = 0; i < this.element.length; i++) {
         this.init(this.element[i], i);
       }
     }
@@ -99,6 +99,7 @@
       if (this.el.readyState > 3) {
         this.videoReadyCallback();
       } else {
+
         // Add event listener to detect when the video can play through
         this.el.addEventListener('canplaythrough', this.playEvent, false);
         this.el.addEventListener('canplay', this.playEvent, false);
@@ -106,7 +107,7 @@
 
       // Prevent context menu on right click for object
       if (this.options.preventContextMenu) {
-        this.el.addEventListener('contextmenu', () => false);
+        this.el.addEventListener('contextmenu', function(){ return false; });
       }
     }
 
@@ -116,6 +117,7 @@
      * @method videoReadyCallback
      */
     videoReadyCallback() {
+
       // Prevent event from being repeatedly called
       this.el.removeEventListener('canplaythrough', this.playEvent, false);
       this.el.removeEventListener('canplay', this.playEvent, false);
@@ -166,8 +168,8 @@
      * @method positionObject
      */
     positionObject() {
-      const scrollPos = window.pageYOffset;
-      let {xPos, yPos} = this.scaleObject();
+      var scrollPos = window.pageYOffset;
+      var {xPos, yPos} = this.scaleObject();
 
       // Check for parallax
       if (this.options.parallax) {
@@ -181,7 +183,7 @@
         yPos = -yPos;
       }
 
-      const transformStyle = (this.options.has3d) ? `translate3d(${xPos}px, ${yPos}px, 0)` : `translate(${xPos}px, ${yPos}px)`;
+      var transformStyle = (this.options.has3d) ? `translate3d(${xPos}px, ${yPos}px, 0)` : `translate(${xPos}px, ${yPos}px)`;
       // Style with prefix
       this.el.style[`${this.options.browserPrexix}`] = transformStyle;
       // Style without prefix
@@ -195,11 +197,11 @@
      * @method scaleObject
      */
     scaleObject() {
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
-      const heightScale = windowWidth / this.options.originalVideoW;
-      const widthScale = windowHeight / this.options.originalVideoH;
-      let scaleFactor;
+      var windowWidth = window.innerWidth;
+      var windowHeight = window.innerHeight;
+      var heightScale = windowWidth / this.options.originalVideoW;
+      var widthScale = windowHeight / this.options.originalVideoH;
+      var scaleFactor;
 
       this.options.bvVideoWrap.style.width = `${windowWidth}px`;
       this.options.bvVideoWrap.style.height = `${windowHeight}px`;
@@ -210,8 +212,8 @@
         scaleFactor = this.options.minimumVideoWidth / this.options.originalVideoW;
       }
 
-      const videoWidth = scaleFactor * this.options.originalVideoW;
-      const videoHeight = scaleFactor * this.options.originalVideoH;
+      var videoWidth = scaleFactor * this.options.originalVideoW;
+      var videoHeight = scaleFactor * this.options.originalVideoH;
 
       this.el.style.width = `${videoWidth}px`;
       this.el.style.height = `${videoHeight}px`;
@@ -223,8 +225,8 @@
     }
 
     calculateYPos(yPos, scrollPos) {
-      const videoPosition = parseInt(this.options.bvVideoWrap.offsetTop);
-      const videoOffset = videoPosition - scrollPos;
+      var videoPosition = parseInt(this.options.bvVideoWrap.offsetTop);
+      var videoOffset = videoPosition - scrollPos;
 
       yPos = -((videoOffset / this.options.parallax.effect) + yPos);
 
@@ -238,7 +240,7 @@
      * @params {number} - iteration of video
      */
     setVideoWrap(iteration) {
-      const wrapper = document.createElement('div');
+      var wrapper = document.createElement('div');
 
       // Set video wrap class for later use in calculations
       this.options.bvVideoWrapClass = `${this.el.className}-wrap-${iteration}`;
@@ -276,9 +278,9 @@
      * @method insertVideos
      */
     insertVideos() {
-      for(let i = 0; i < this.options.src.length; i++) {
-        let videoTypeArr = this.options.src[i].split('.');
-        let videoType = videoTypeArr[videoTypeArr.length - 1];
+      for(var i = 0; i < this.options.src.length; i++) {
+        var videoTypeArr = this.options.src[i].split('.');
+        var videoType = videoTypeArr[videoTypeArr.length - 1];
 
         this.addSourceToVideo(this.options.src[i], `video/${videoType}`);
       }
@@ -292,7 +294,7 @@
      * @params {string} type - type of video
      */
     addSourceToVideo(src, type) {
-      const source = document.createElement('source');
+      var source = document.createElement('source');
 
       source.src = src;
       source.type = type;
@@ -306,8 +308,8 @@
      * @method detectBrowser
      */
     detectBrowser() {
-      const val = navigator.userAgent.toLowerCase();
-      let browserPrexix;
+      var val = navigator.userAgent.toLowerCase();
+      var browserPrexix;
 
       if (val.indexOf('chrome') > -1 || val.indexOf('safari') > -1) {
         browserPrexix = 'webkitTransform';

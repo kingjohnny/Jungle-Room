@@ -50,16 +50,16 @@ function goToVideo(id)
 for(var i=0; i < videos.length;i++)
 {
     var source = videos[i].getAttribute('data-src'),
-        comment = videos[i].getAttribute('data-comment')
+        comment = videos[i].getAttribute('data-comment'),
         className = (i === 0) ? '.bv-video' : '.bv-video-'+(i+1); // index '1' is skipped in classname: .bv-video, .bv-video-2, .bv-video-3,...
 
     new BackgroundVideo(className, {
         src: [source],
         comment: comment,
-        onReady: function () {
+        onReady: function(){
 
             // Use onReady() to prevent flickers or force loading state
-            const vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
+            var vidParent = document.querySelector(`.${this.bvVideoWrapClass}`);
             vidParent.classList.add('bv-video-wrap--ready');
 
             if(this.comment)
