@@ -51,27 +51,14 @@ main{
   border: 10px solid #FFF ;
 }
 .logo{
-  top: 30px;
-  left: 3%;
+  bottom: 30px;
+  right: 3%;
   z-index: 1005;
   width: 47px;
 }
-.title img{
-  width: 100%;
-}
-.title{
-  position: fixed;
-  top: 3%;
-  right: 3%;
-  z-index: 1001;
-  font-family: 'Georgia', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 100;
-  color: #FFF;
-  width: 25px;
-}
+
 .parrot{
-  z-index: 1000;
+  z-index: 1002;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -105,7 +92,7 @@ main {
 }
 .bullets{
   position: fixed;
-  z-index: 1001;
+  z-index: 1002;
   width: 50%;
   bottom: 5%;
   left: 50%;
@@ -162,17 +149,18 @@ video{
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #62b9db; /* blue */
-  mix-blend-mode: multiply;
+  background-color: rgba(98, 185, 219, 0.3); /* blue: 62b9db */
+  mix-blend-mode: hard-light;
+  /*mix-blend-mode: multiply;*/
   z-index: 10;
 }
 .bv-video-5-wrap-0::before,
 .bv-video-2-wrap-0::before{
-  background-color: #4ec285; /* green */
+  background-color: rgba(78,194,133, 0.3); /* green:4ec285 */
 }
 .bv-video-6-wrap-0::before,
 .bv-video-3-wrap-0::before{
-  background-color: #ffb33a; /*  orange */
+  background-color: rgba(255,179,58, 0.3); /*  orange:ffb33a */
 }
 
 .bv-video-wrap-0::after,
@@ -183,8 +171,8 @@ video{
 .bv-video-6-wrap-0::after{
   content: '';
   display: block;
-  position: fixed; /*GEEFT PROBLEMEN IN FIREFOX*/
-  right: calc(3% + 50px);  top: 35px;
+  position: absolute;
+  left: 3%;  top: 35px;
   font-family: 'Georgia', sans-serif;
   font-size: 1.5em;
   font-weight: bold;
