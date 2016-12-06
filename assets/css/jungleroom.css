@@ -29,6 +29,15 @@ main{
   /*background: linear-gradient(180deg, #4e95b9, #3d6a83);*/
   background-color: #0f2a47;
 }
+.card-wrap{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
 
 .large-3{
   width: 33%;
