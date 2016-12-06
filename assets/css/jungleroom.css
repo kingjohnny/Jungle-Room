@@ -192,22 +192,22 @@ video{
   z-index: 1001;
 }
 .bv-video-wrap-0::after{
-  content: 'Thrash the room';
+  content: 'Thrashin the camp';
 }
 .bv-video-2-wrap-0::after{
-  content: 'Paint:the wall';
+  content: 'Colors of the wind';
 }
 .bv-video-3-wrap-0::after{
 content: 'Everybody hit the floor';
 }
 .bv-video-4-wrap-0::after{
-content: 'The knights table';
+content: 'Turning tables';
 }
 .bv-video-5-wrap-0::after{
-content: 'Finishing touches';
+content: 'Going wild';
 }
 .bv-video-6-wrap-0::after{
-content: 'Party Animals';
+content: 'Welcome to our jungle';
 }
 
 
