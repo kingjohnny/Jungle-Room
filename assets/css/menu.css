@@ -178,7 +178,7 @@
   -moz-transition: visibility 0s, opacity 0.3s;
   transition: visibility 0s, opacity 0.3s;
 }
-.article .icon{
+.togglesounds .icon{
   width: 25px;
   display: block;
 }
@@ -186,6 +186,7 @@
   position: fixed;
   right: calc(3% + 60px);
   top: 40px;
+  z-index: 1005;
 }
 .article h1{
   color: #FFF;
