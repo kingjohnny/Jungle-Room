@@ -30,6 +30,17 @@ main{
   background-color: #0f2a47;
 }
 
+.large-3{
+  width: 33%;
+  padding: 0 0.9375rem;
+  float: left;
+}
+.large-12{
+  width: 100%;
+  padding: 0 0.9375rem;
+  float: left;
+}
+
 #music{display: none;}
 .border{
   position: fixed;

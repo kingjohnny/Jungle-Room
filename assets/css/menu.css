@@ -178,9 +178,22 @@
   -moz-transition: visibility 0s, opacity 0.3s;
   transition: visibility 0s, opacity 0.3s;
 }
+.article .icon{
+  width: 25px;
+  display: block;
+}
+.togglesounds{
+  position: fixed;
+  right: calc(3% + 60px);
+  top: 40px;
+}
 .article h1{
   color: #FFF;
   font-size: 1.25rem;
+}
+.article a{
+  font-size: 1rem;
+  color: #ffb441;
 }
 .article p {
   color: #FFF;
@@ -202,17 +215,13 @@
     margin: 2em 0;
   }
   .article a {
-    font-size: 28px;
-    font-size: 1.75rem;
+    font-size: 1rem;
+    color: #ffb441;
   }
 }
 @media only screen and (min-width: 1170px) {
   .article li {
     margin: 2.6em 0;
-  }
-  .article a {
-    font-size: 32px;
-    font-size: 2rem;
   }
 }
 

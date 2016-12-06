@@ -68,4 +68,21 @@ for(var i=0; i < videos.length;i++)
             }
         }
     });
-}
+};
+// STOP THE SOUND
+$(document).ready(function() {
+        var audioElement = document.getElementById('junglesounds');
+        $('#play').hide();
+
+        $('#play').click(function() {
+        $('#play').hide();
+        $('#stop').show();
+         audioElement.play();
+    });
+
+    $('#stop').click(function() {
+        $('#play').show();
+        $('#stop').hide();
+        audioElement.pause();
+    });
+});

@@ -32,7 +32,6 @@ Welcome to the Jungle -->
     <link rel="stylesheet" href="assets/css/normalize.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/jungleroom.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/menu.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/z.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!-- Preloader -->
@@ -63,10 +62,42 @@ Welcome to the Jungle -->
   </div>
 
   <article class="article">
-      <h1>Jungle Room</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<div class="addthis_inline_share_toolbox"></div>
-</article>
+    <div class="togglesounds">
+      <a id="play"  href="#" onClick="play()"><img src="assets/img/mute.svg" alt="play" class="icon"></a>
+      <a id="stop" href="#" onClick="play()"><img src="assets/img/sound.svg" alt="stop" class="icon"></a>
+    </div>
+    <div class="large-12 columns">
+      <h1>Welcome to the jungle</h1>
+      <p>We proudly present to you, our jungle! Deze party animals zal je elke werkdag hier aantreffen. Wil je graag eens een kijkje komen nemen? <a title="Roooaarrrrr">Give us a roar!</a> </p>
+    </div>
+    <div class="large-3 columns">
+      <h1>1. Jungle Room: the roots</h1>
+      <p>Think Tomorrow verhuisde deze maand naar een pand met drie verdiepen, waarvan eentje onze playground mag zijn. Wij kregen van Emma en Kevin (nogmaals thanks bosses!) een bepaald budget om één kamer volledig in te richten naar onze zin. Zij werden dan ook volledig buiten dit project gehouden, tot nu. Ladies en gentlemen, welcome to the jungle.</p>
+    </div>
+    <div class="large-3 columns">
+      <h1>2. Thrashin' the camp</h1>
+      <p>First things first: tear it all down! De groene tapis plein en de hangende TL-lampen moesten plaats maken voor wildere dingen. Met wat vallen (vooral veel vallen) en opstaan lukte dit in een mum van tijd en konden we met een schone lei aan onze ruimte beginnen. Ready, set, go!</p>
+    </div>
+    <div class="large-3 columns">
+      <h1>3. Colors of the wind</h1>
+      <p>Onze topdesigner Glenn ontwierp een mural in thema, een floating island met een uitbarstende vulkaan en waterval én papegaai! Deze werd in zes verschillende fases geschilderd. Met of zonder vuilzak aan en met of zonder licht, niets hield ons tegen… we did it!</p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="large-3 columns">
+      <h1>4. Everybody hit the floor</h1>
+      <p>Voor die groene tapis plein hadden we het niet echt. Deze werd vervangen door een mooie Quickstep laminaat die onze klussers van dienst in één twee drie legden. Multi-inzetbaar, het is maar een woord…</p>
+    </div>
+    <div class="large-3 columns">
+      <h1>5.Turning tables</h1>
+      <p>Onze Jungle Room dient als een ruimte waar we naartoe komen wanneer we rustig willen werken of meeten. Daarom moest er ook wel een soort bureau/vergadertafel komen te staan. Onze eigen King of the Jungle ging aan de slag en knutselde een mooie houten tafel in elkaar.</p>
+    </div>
+    <div class="large-3 columns">
+      <h1>6. Goin‘ wild.</h1>
+      <p>Vloer, check! Muur, check! Plafond, check! De basics zijn volledig klaar, hoogtijd voor de finishing touches. Voor de helft van de kamer kozen we ervoor om een grasmat (fake weliswaar) te leggen met erboven twee rieten hangstoelen. De “King’s table” kreeg ook zijn plaatsje, omringt met houten krukjes. Verder zou het de naam “Jungle Room” niet waardig zijn als we er geen tien miljoen miljard planten hadden gezet! </p>
+    </div>
+  <!-- Social share Addthis -->
+  <div class="addthis_inline_share_toolbox"></div>
+  </article>
   <div class="overlay-nav">
     <span></span>
   </div> <!-- overlay-nav -->
@@ -107,7 +138,7 @@ Welcome to the Jungle -->
   </main>
 
   <div id="music">
-    <audio autoplay loop>
+    <audio autoplay loop id="junglesounds">
       <source src="assets/audio/jungle2.mp3" type="audio/mpeg">
       <p>If you can read this, your browser does not support the audio element.</p>
     </audio>
