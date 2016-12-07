@@ -136,6 +136,11 @@ video{
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
+
+.bv-video-6-wrap-0  video{
+  filter: none!important;
+  -webkit-filter: none!important;
+}
 /* Video wrap */
 .bv-video-wrap {
   width: 100%;
