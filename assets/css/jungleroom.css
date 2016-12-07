@@ -29,6 +29,26 @@ main{
   /*background: linear-gradient(180deg, #4e95b9, #3d6a83);*/
   background-color: #0f2a47;
 }
+.card-wrap{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.large-3{
+  width: 33%;
+  padding: 0 0.9375rem;
+  float: left;
+}
+.large-12{
+  width: 100%;
+  padding: 0 0.9375rem;
+  float: left;
+}
 
 #music{display: none;}
 .border{
@@ -38,27 +58,15 @@ main{
   width: 100%;
   height: 100%;
   border: 10px solid #FFF ;
+  pointer-events:none;
 }
 .logo{
-  top: 30px;
-  left: 3%;
+  bottom: 30px;
+  right: 3%;
   z-index: 1005;
   width: 47px;
 }
-.title img{
-  width: 100%;
-}
-.title{
-  position: fixed;
-  top: 3%;
-  right: 3%;
-  z-index: 1001;
-  font-family: 'Georgia', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 100;
-  color: #FFF;
-  width: 25px;
-}
+
 .parrot{
   z-index: 1002;
   position: fixed;
@@ -151,17 +159,18 @@ video{
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #62b9db; /* blue */
-  mix-blend-mode: multiply;
+  background-color: rgba(98, 185, 219, 0.3); /* blue: 62b9db */
+  mix-blend-mode: hard-light;
+  /*mix-blend-mode: multiply;*/
   z-index: 10;
 }
 .bv-video-5-wrap-0::before,
 .bv-video-2-wrap-0::before{
-  background-color: #4ec285; /* green */
+  background-color: rgba(78,194,133, 0.3); /* green:4ec285 */
 }
 .bv-video-6-wrap-0::before,
 .bv-video-3-wrap-0::before{
-  background-color: #ffb33a; /*  orange */
+  background-color: rgba(255,179,58, 0.3); /*  orange:ffb33a */
 }
 
 .bv-video-wrap-0::after,
@@ -172,8 +181,8 @@ video{
 .bv-video-6-wrap-0::after{
   content: '';
   display: block;
-  position: absolute; /*GEEFT PROBLEMEN IN FIREFOX*/
-  right: calc(3% + 50px);  top: 35px;
+  position: absolute;
+  left: 3%;  top: 35px;
   font-family: 'Georgia', sans-serif;
   font-size: 1.5em;
   font-weight: bold;
@@ -181,22 +190,22 @@ video{
   z-index: 1001;
 }
 .bv-video-wrap-0::after{
-  content: 'Thrash the room';
+  content: 'Thrashin the camp';
 }
 .bv-video-2-wrap-0::after{
-  content: 'Paint:the wall';
+  content: 'Colors of the wind';
 }
 .bv-video-3-wrap-0::after{
 content: 'Everybody hit the floor';
 }
 .bv-video-4-wrap-0::after{
-content: 'The knights table';
+content: 'Turning tables';
 }
 .bv-video-5-wrap-0::after{
-content: 'Finishing touches';
+content: 'Going wild';
 }
 .bv-video-6-wrap-0::after{
-content: 'Party Animals';
+content: 'Welcome to our jungle';
 }
 
 
