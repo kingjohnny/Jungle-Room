@@ -60,7 +60,7 @@ main{
   width: 25px;
 }
 .parrot{
-  z-index: 1000;
+  z-index: 1002;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -94,7 +94,7 @@ main {
 }
 .bullets{
   position: fixed;
-  z-index: 1001;
+  z-index: 1002;
   width: 50%;
   bottom: 5%;
   left: 50%;
@@ -172,7 +172,7 @@ video{
 .bv-video-6-wrap-0::after{
   content: '';
   display: block;
-  position: fixed; /*GEEFT PROBLEMEN IN FIREFOX*/
+  position: absolute; /*GEEFT PROBLEMEN IN FIREFOX*/
   right: calc(3% + 50px);  top: 35px;
   font-family: 'Georgia', sans-serif;
   font-size: 1.5em;
